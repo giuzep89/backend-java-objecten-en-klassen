@@ -2,12 +2,8 @@ import java.text.DecimalFormat;
 
 public class Ingredient {
     private double quantity;
-    private final String unit;
-    private final String name;
-
-    private double firstPart;
-    private double secondPart;
-    private double thirdPart;
+    private String unit;
+    private String name;
 
     // Full constructor
     public Ingredient(double quantity, String unit, String name){
@@ -15,31 +11,33 @@ public class Ingredient {
         this.unit = unit;
         this.name = name;
     }
-
-    // Constructor without unit
-    public Ingredient(double quantity, String name){
-        this.quantity = quantity;
-        this.name = name;
-        this.unit = "";
+    // Empty constructor
+    public Ingredient() {
     }
+
     //  Setters & Getters
     public void setQuantity(double quantity) {
         this.quantity = quantity;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
     }
 
     public double getQuantity() {
         return quantity;
     }
 
-    public void divideInTwo (double quantity) {
-        this.firstPart = quantity / 2;
-        this.secondPart = firstPart;
+    public String getName() {
+        return name;
     }
 
-    public void divideInThree (double quantity){
-        this.firstPart = quantity / 3;
-        this.secondPart = firstPart;
-        this.thirdPart = firstPart;
+    public String getUnit() {
+        return unit;
     }
 
 
