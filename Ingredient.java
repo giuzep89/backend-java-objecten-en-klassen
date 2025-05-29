@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 public class Ingredient {
     private double quantity;
     private final String unit;
@@ -42,9 +44,11 @@ public class Ingredient {
 
 
     // Print ingredient
+    // Decimal format is a Java Class to control how to print numbers. I used it here to let it print the double variables without the .0 at the end //
     @Override
     public String toString(){
-        return this.quantity + this.unit + this.name;
+        DecimalFormat format = new DecimalFormat("0.#");
+        return format.format(this.quantity) + " " + this.unit + " " + this.name;
     }
 
 
